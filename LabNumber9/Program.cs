@@ -16,22 +16,12 @@ namespace LabNumber9
             while (ContinueProgram == true)
             {
 
-                double radius; //Variable
                 Circle RadiusCalc = new Circle(); //create an object
 
                 Console.WriteLine("Welcome to the Circle Tester"); //prompt
                 Console.WriteLine("Enter radius:");
-                radius = double.Parse(Console.ReadLine());
-                while (!double.TryParse(Console.ReadLine(), out radius))
-                {
-                    {
-                        Console.WriteLine("Please enter valid data");
-                    }
-                    
-                }
-               
-               
-                RadiusCalc.Radius = radius;
+                
+                RadiusCalc.Radius = ReadValidDouble(); //feed object
                 Console.WriteLine("Circumference:" + RadiusCalc.GetCircumference());
                 Console.WriteLine("Area:"+RadiusCalc.GetArea());//call method for area
 
@@ -43,13 +33,23 @@ namespace LabNumber9
                 {
                     ContinueProgram = false;
                     Console.WriteLine("Goodbye. You created two circle object(s).");
-
                 }
 
                 Console.ReadKey();
-
-
         }
+        }
+        
+        public static double ReadValidDouble() //method for validation 
+        {
+            double.Parse(Console.ReadLine());
+            double input = 0;
+
+            while (!double.TryParse(Console.ReadLine(), out input))
+            {
+                Console.WriteLine("Please enter valid data");
+            }
+            return input;
+
         }
     }
 }

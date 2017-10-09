@@ -9,7 +9,6 @@ namespace LabNumber9
     class Circle
     {
         //Variable
-
         private double radius;
 
          //Property
@@ -17,7 +16,6 @@ namespace LabNumber9
         {
             set {radius = value;}
             get { return radius; }
-
         }
        
         //Methods
@@ -26,19 +24,13 @@ namespace LabNumber9
             double pi = Math.PI;
             double area = pi * radius * radius;
             return area;
-
         }
 
         public double GetCircumference()
-        {
-         
+        {     
             double pi = Math.PI;
             double circumference = 2 * pi * radius;
             return circumference;
         }
-
-
-
-
     }
 }
